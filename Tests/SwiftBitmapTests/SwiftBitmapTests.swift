@@ -4,7 +4,7 @@ import XCTest
 final class SwiftBitmapTests: XCTestCase {
     
     func testFileSave() {
-        let bm = Bitmap(128,128)
+        let bm = SBBitmap(128,128)
         if let data = bm.gif() {
             try? data.write(to: URL(fileURLWithPath: "/tmp/test.gif"))
         }
@@ -30,7 +30,7 @@ final class SwiftBitmapTests: XCTestCase {
         let white: UInt32 = 0xFFFFFFFF
         
         let r = SBRect(0, 0, 128, 128)
-        let bm = Bitmap(r.w, r.h)
+        let bm = SBBitmap(r.w, r.h)
         bm.set(color: red)
         bm.fill(circle: r)
         bm.set(color: green)

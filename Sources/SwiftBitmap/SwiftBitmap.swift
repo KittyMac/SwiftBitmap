@@ -7,7 +7,7 @@ public enum SBScaling {
     case bicubic
 }
 
-public class Bitmap {
+public class SBBitmap {
     
     var bm: OpaquePointer?
     
@@ -98,11 +98,11 @@ public class Bitmap {
         bm_flip_vertical(bm)
     }
     
-    public func copy(_ dx: Int32, _ dy: Int32, _ other: Bitmap, _ src: SBRect) {
+    public func copy(_ dx: Int32, _ dy: Int32, _ other: SBBitmap, _ src: SBRect) {
         bm_blit(bm, dx, dy, other.bm, src.x, src.y, src.w, src.h)
     }
     
-    public func draw(_ dst: SBRect, _ other: Bitmap, _ src: SBRect) {
+    public func draw(_ dst: SBRect, _ other: SBBitmap, _ src: SBRect) {
         bm_blit_ex(bm, dst.x, dst.y, dst.w, dst.h, other.bm, src.x, src.y, src.w, src.h, 0)
     }
     
