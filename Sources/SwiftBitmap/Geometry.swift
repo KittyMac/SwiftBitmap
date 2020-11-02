@@ -5,7 +5,7 @@ private func lerp(_ a: Int32, _ b: Int32, _ f: Float) -> Int32 {
     return a + Int32(Float(b - a) * f)
 }
 
-struct SBPoint {
+public struct SBPoint {
     var x: Int32
     var y: Int32
     
@@ -15,7 +15,7 @@ struct SBPoint {
     }
 }
 
-struct SBRect {
+public struct SBRect {
     var x: Int32
     var y: Int32
     var w: Int32
