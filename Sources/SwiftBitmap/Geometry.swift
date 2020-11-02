@@ -9,7 +9,7 @@ public struct SBPoint {
     var x: Int32
     var y: Int32
     
-    init(_ _x: Int32, _ _y: Int32) {
+    public init(_ _x: Int32, _ _y: Int32) {
         x = _x
         y = _y
     }
@@ -21,18 +21,18 @@ public struct SBRect {
     var w: Int32
     var h: Int32
     
-    init(_ _x: Int32, _ _y: Int32, _ _w: Int32, _ _h: Int32) {
+    public init(_ _x: Int32, _ _y: Int32, _ _w: Int32, _ _h: Int32) {
         x = _x
         y = _y
         w = _w
         h = _h
     }
     
-    func interp(_ ix: Float, _ iy: Float) -> SBPoint {
+    public func interp(_ ix: Float, _ iy: Float) -> SBPoint {
         return SBPoint(lerp(x, x + w, ix), lerp(y, y + h, iy))
     }
     
-    func inset(_ v: Int32) -> SBRect {
+    public func inset(_ v: Int32) -> SBRect {
         return SBRect(
             x + v,
             y + v,
@@ -41,7 +41,7 @@ public struct SBRect {
         )
     }
     
-    func inset(_ vX: Int32, _ vY: Int32) -> SBRect {
+    public func inset(_ vX: Int32, _ vY: Int32) -> SBRect {
         return SBRect(
             x + vX,
             y + vY,
@@ -50,7 +50,7 @@ public struct SBRect {
         )
     }
     
-    func inset(_ top: Int32, _ left: Int32, _ bottom: Int32, _ right: Int32) -> SBRect {
+    public func inset(_ top: Int32, _ left: Int32, _ bottom: Int32, _ right: Int32) -> SBRect {
         return SBRect(
             x + left,
             y + top,
