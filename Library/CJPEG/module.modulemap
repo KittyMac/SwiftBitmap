@@ -1,0 +1,4 @@
+module CJPEG [system] {
+  link "jpeg"
+  export *
+}

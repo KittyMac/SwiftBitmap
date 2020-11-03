@@ -14,8 +14,21 @@ let package = Package(
     dependencies: [
     ],
     targets: [
+        .systemLibrary(
+            name: "CPNG",
+            path: "Library/CPNG",
+            pkgConfig: "libpng",
+            providers: [ .brew(["libpng"]), .apt(["libpng"])]
+        ),
+        .systemLibrary(
+            name: "CJPEG",
+            path: "Library/CJPEG",
+            pkgConfig: "libjpeg",
+            providers: [ .brew(["libjpeg"]), .apt(["libjpeg"])]
+        ),
         .target(
-            name: "bitmap"
+            name: "bitmap",
+            dependencies: [ "CPNG", "CJPEG" ]
         ),
         .target(
             name: "SwiftBitmap",

@@ -3,6 +3,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 #include <string.h>
 #include <stdint.h>
 #include <stdarg.h>
@@ -20,6 +21,9 @@
 #  endif
 #endif
 
+#define USEPNG
+#define USEJPG
+
 /*
 Use the -DUSEPNG compiler option to enable PNG support via libpng.
 If you use it, you need to link against the libpng (-lpng)
@@ -33,6 +37,7 @@ you may not want to import a bunch of third party libraries.
 #endif
 
 #ifdef USEJPG
+#   include <stddef.h>
 #   include <jpeglib.h>
 #   include <setjmp.h>
 #endif
