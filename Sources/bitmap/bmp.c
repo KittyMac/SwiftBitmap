@@ -22,7 +22,10 @@
 #endif
 
 #define USEPNG
-#define USEJPG
+
+// Reenable this when we can include the libpeg source directly
+// in this swift package (do not rely on external library)
+//#define USEJPG
 
 /*
 Use the -DUSEPNG compiler option to enable PNG support via libpng.
