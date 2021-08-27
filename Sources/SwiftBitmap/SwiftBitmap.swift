@@ -120,11 +120,11 @@ public class SBBitmap {
         case .nearest:
             bm = bm_resample(bm, nw, nh)
         case .bilinear:
-            bm = bm_resample(bm, nw, nh)
+            bm = bm_resample_blin(bm, nw, nh)
         case .bicubic:
-            bm = bm_resample(bm, nw, nh)
+            bm = bm_resample_bcub(bm, nw, nh)
         }
         bm_free(old)
     }
-    
+
 }
